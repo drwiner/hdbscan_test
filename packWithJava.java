@@ -3,6 +3,10 @@
     # <include name="java/external/msgpack-core-0.8.20.jar"/>
 */
 
+import org.msgpack.core.MessagePack;
+import org.msgpack.core.MessagePacker;
+import org.msgpack.core.MessageUnpacker;
+
 public static boolean saveToBinary(List<float[]> embeddings, String destination) {
     try (OutputStream out = new FileOutputStream(destination)) {
         MessagePacker packer = MessagePack.newDefaultPacker(out);
